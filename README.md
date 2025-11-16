@@ -1,142 +1,142 @@
 # SmartHome
 
-macOS menü çubuğu uygulaması - Govee ışıklarını ve cihazlarını yönetmek için.
+macOS menu bar application for managing Govee lights and devices.
 
-## Özellikler
+## Features
 
-- ✅ Cihaz listesi ve durum takibi
-- ✅ Cihaz açma/kapama kontrolü (toggle switch)
-- ✅ Renk seçimi (RGB color picker ve preset renkler)
-- ✅ Parlaklık kontrolü (slider)
-- ✅ Senaryo yönetimi ve çalıştırma
-- ✅ Zamanlayıcılar (belirli saatlerde aç/kapa)
-- ✅ Cihaz grupları ile toplu kontrol
-- ✅ MQTT entegrasyonu ile gerçek zamanlı durum güncellemeleri
-- ✅ Demo cihazlar ile test ve geliştirme desteği
-- ✅ Modern ve kullanıcı dostu arayüz
-- ✅ Scroll edilebilir cihaz listesi
-- ✅ Menü bar menüsü ve çıkış seçeneği
+- ✅ Device list and status tracking
+- ✅ Device on/off control (toggle switch)
+- ✅ Color selection (RGB color picker and preset colors)
+- ✅ Brightness control (slider)
+- ✅ Scenario management and execution
+- ✅ Timers (turn on/off at specific times)
+- ✅ Device groups for bulk control
+- ✅ MQTT integration for real-time status updates
+- ✅ Demo devices for testing and development
+- ✅ Modern and user-friendly interface
+- ✅ Scrollable device list
+- ✅ Menu bar menu and quit option
 
-## Kurulum
+## Installation
 
-1. Repository'yi klonlayın:
+1. Clone the repository:
 ```bash
 git clone <repository-url>
 cd smarthome
 ```
 
-2. Bağımlılıkları yükleyin:
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. Govee API anahtarınızı `.env` dosyasına ekleyin:
+3. Add your Govee API key to the `.env` file:
 ```bash
 echo "GOVEE_API_KEY=your-api-key-here" > .env
 ```
 
-**Not:** `.env` dosyası `.gitignore` içinde olduğu için git'e commit edilmeyecektir.
+**Note:** The `.env` file is in `.gitignore` and will not be committed to git.
 
-4. Uygulamayı derleyin:
+4. Build the application:
 ```bash
 npm run build
 ```
 
-5. Uygulamayı çalıştırın:
+5. Run the application:
 ```bash
 npm start
 ```
 
-## Geliştirme
+## Development
 
-Geliştirme modunda çalıştırmak için (DevTools ile):
+To run in development mode (with DevTools):
 ```bash
 npm run electron:dev
 ```
 
-Watch modunda TypeScript derlemesi için:
+For TypeScript compilation in watch mode:
 ```bash
 npm run dev
 ```
 
-## Paketleme
+## Packaging
 
-macOS için DMG dosyası oluşturmak için:
+To create a DMG file for macOS:
 ```bash
 npm run dist:mac
 ```
 
-Tüm platformlar için:
+For all platforms:
 ```bash
 npm run dist
 ```
 
 ## Govee API Key
 
-Uygulamayı kullanmak için Govee API anahtarına ihtiyacınız var:
+You need a Govee API key to use the application:
 
-1. Govee Home uygulamasını açın
-2. Hesap sayfasına gidin (sağ alt köşedeki kişi simgesi)
-3. Sağ üst köşedeki dişli simgesine tıklayın
-4. "API Anahtarı Başvurusu" seçeneğini seçin ve formu doldurun
-5. API anahtarınızı aldıktan sonra:
-   - `.env` dosyasına ekleyin: `GOVEE_API_KEY=your-api-key`
-   - Veya uygulamadaki ayarlar bölümünden girin
+1. Open the Govee Home app
+2. Go to the Account page (person icon in the bottom right)
+3. Click the gear icon in the top right
+4. Select "API Key Application" and fill out the form
+5. After receiving your API key:
+   - Add it to `.env` file: `GOVEE_API_KEY=your-api-key`
+   - Or enter it in the app's settings section
 
-**Güvenlik:** API anahtarınızı asla git repository'ye commit etmeyin. `.env` dosyası zaten `.gitignore` içindedir.
+**Security:** Never commit your API key to the git repository. The `.env` file is already in `.gitignore`.
 
-## Demo Cihazlar
+## Demo Devices
 
-Uygulama, gerçek cihazlarınız olmasa bile test edebilmeniz için demo cihazlar içerir:
-- Oturma Odası Işığı (renk ve parlaklık kontrolü)
-- Yatak Odası Işığı (renk ve parlaklık kontrolü)
-- Mutfak Işığı (sadece parlaklık kontrolü)
-- Çalışma Odası Işığı (renk ve parlaklık kontrolü)
+The application includes demo devices so you can test it even without real devices:
+- Living Room Light (color and brightness control)
+- Bedroom Light (color and brightness control)
+- Kitchen Light (brightness control only)
+- Study Room Light (color and brightness control)
 
-Demo cihazlar her zaman gösterilir ve tüm kontroller çalışır (local state'te tutulur).
+Demo devices are always shown and all controls work (stored in local state).
 
-## Kullanım
+## Usage
 
-### Menü Bar Menüsü
-- Menü bar ikonuna **sağ tıklayın** → Context menü açılır
-- **Ayarlar**: Pencereyi açar ve ayarlar panelini gösterir
-- **Çıkış**: Uygulamayı kapatır
+### Menu Bar Menu
+- **Right-click** the menu bar icon → Context menu opens
+- **Settings**: Opens the window and shows the settings panel
+- **Quit**: Closes the application
 
-### Ayarlar Paneli
-- Header'daki ⚙️ butonuna tıklayarak ayarlar panelini açabilirsiniz
-- API anahtarınızı buradan girebilir veya güncelleyebilirsiniz
-- **Çıkış** butonu ile uygulamadan çıkabilirsiniz
+### Settings Panel
+- Click the ⚙️ button in the header to open the settings panel
+- You can enter or update your API key here
+- Use the **Quit** button to exit the application
 
-### Cihaz Kontrolü
-- **Toggle Switch**: Cihazı aç/kapa
-- **Parlaklık Slider**: Parlaklığı ayarla (1-100%)
-- **Renk Seçici**: RGB renk seçimi
-- **Renk Preset'leri**: Hızlı renk seçimi için preset butonları
+### Device Control
+- **Toggle Switch**: Turn device on/off
+- **Brightness Slider**: Adjust brightness (1-100%)
+- **Color Picker**: RGB color selection
+- **Color Presets**: Preset buttons for quick color selection
 
-## Testler
+## Tests
 
-Native Node.js test runner kullanarak end-to-end testler çalıştırılabilir:
+End-to-end tests can be run using the native Node.js test runner:
 
 ```bash
 npm test
 ```
 
-Watch modunda test çalıştırmak için:
+To run tests in watch mode:
 ```bash
 npm run test:watch
 ```
 
-Testler şunları kontrol eder:
-- Tüm cihazları fetch etme
-- Her cihaz için state bilgisini fetch etme
-- Device details (device info + state) fetch etme
+Tests check:
+- Fetching all devices
+- Fetching state information for each device
+- Device details (device info + state) fetching
 - Invalid device handling
-- Request ID interceptor'ın çalışması
-- Işık cihazlarını filtreleme
-- Cihaz açma/kapama kontrolü
-- MQTT entegrasyonu ile gerçek zamanlı durum güncellemeleri
+- Request ID interceptor functionality
+- Filtering light devices
+- Device on/off control
+- MQTT integration with real-time status updates
 
-## Proje Yapısı
+## Project Structure
 
 ```
 smarthome/
@@ -144,28 +144,28 @@ smarthome/
 │   ├── main/           # Electron main process
 │   ├── renderer/       # UI (HTML, CSS, TypeScript)
 │   └── api/            # Govee API client
-├── lib/                # Node.js API client (testler için)
-├── tests/              # End-to-end testler
-├── dist/               # Derlenmiş dosyalar (gitignore)
-└── docs/               # API dokümantasyonu
+├── lib/                # Node.js API client (for tests)
+├── tests/              # End-to-end tests
+├── dist/               # Compiled files (gitignore)
+└── docs/               # API documentation
 ```
 
-## Teknolojiler
+## Technologies
 
-- **Electron** - Cross-platform desktop uygulama framework
+- **Electron** - Cross-platform desktop application framework
 - **TypeScript** - Type-safe JavaScript
-- **Govee Cloud API** - Cihaz kontrolü ve durum takibi
-- **MQTT** - Gerçek zamanlı cihaz durum güncellemeleri
-- **menubar** - macOS menü bar uygulaması wrapper
+- **Govee Cloud API** - Device control and status tracking
+- **MQTT** - Real-time device status updates
+- **menubar** - macOS menu bar application wrapper
 - **Node.js Test Runner** - Native test framework
 
-## Güvenlik Notları
+## Security Notes
 
-- API anahtarınızı `.env` dosyasında saklayın
-- `.env` dosyası `.gitignore` içindedir ve commit edilmeyecektir
-- API anahtarınızı asla public repository'lere yüklemeyin
-- Uygulama içinde API anahtarı localStorage'da saklanır (sadece local)
+- Store your API key in the `.env` file
+- The `.env` file is in `.gitignore` and will not be committed
+- Never upload your API key to public repositories
+- The API key is stored in localStorage within the app (local only)
 
-## Lisans
+## License
 
 MIT
